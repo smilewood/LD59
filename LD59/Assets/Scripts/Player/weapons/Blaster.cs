@@ -18,7 +18,6 @@ public class Blaster : TargetedWeapon
 
    public override void FireAtTarget(Vector2 target)
    {
-      Debug.Log($"Fire at {target}");
       GameObject newShot = Instantiate(ShotPrefab, this.transform.position, Quaternion.identity, ShotParent);
       newShot.GetComponent<DirectionShot>().direction = target.normalized;
    }
