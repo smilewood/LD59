@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
+      PlayerUpgrades upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
+      MaxHp = upgradeStatus.HealthBoostEffects[upgradeStatus.HealthBoostLevel].Effect;
       CurrentHp = MaxHp;
       OnPlayerHealthChanged.Invoke(CurrentHp, MaxHp);
       DamagePlayer.AddListener(ApplyDamage);
