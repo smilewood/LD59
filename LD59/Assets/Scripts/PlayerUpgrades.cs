@@ -17,6 +17,7 @@ public class PlayerUpgrades : ScriptableObject
       public int Effect;
    }
 
+   [NonSerialized]
    public int HealthBoostLevel = 0;
    public HealthUpgrade[] HealthBoostLevels;
 
@@ -27,6 +28,7 @@ public class PlayerUpgrades : ScriptableObject
       public float Effect;
    }
 
+   [NonSerialized]
    public int SpeedBoostLevel = 0;
    public SpeedUpgrade[] SpeedBoostEffects;
 }

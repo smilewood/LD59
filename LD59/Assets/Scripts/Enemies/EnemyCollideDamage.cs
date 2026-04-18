@@ -7,11 +7,9 @@ public class EnemyCollideDamage : MonoBehaviour
    public float Cooldown;
 
    private bool onCooldown = false;
-
-   private void OnCollisionStay2D(Collision2D collision)
+   private void OnTriggerStay2D(Collider2D collision)
    {
-      Debug.Log($"Collided with {collision.collider.gameObject.name}");
-      if (!onCooldown && collision.collider.CompareTag("Player"))
+      if (!onCooldown && collision.CompareTag("Player"))
       {
          PlayerHealth.DamagePlayer.Invoke(ContactDamage);
          StartCoroutine(AttackCooldown());

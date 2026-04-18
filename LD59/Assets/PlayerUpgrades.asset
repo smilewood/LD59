@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafb511c937519b4481bcc45e407f197, type: 3}
   m_Name: PlayerUpgrades
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUpgrades
-  HealthBoostLevel: 0
   HealthBoostLevels:
   - Cost: 0
     Effect: 0
-  SpeedBoostLevel: 1
   SpeedBoostEffects:
   - Cost: 0
     Effect: 2
+  - Cost: 0
+    Effect: 5
