@@ -4,7 +4,7 @@ public class CameraFollow : MonoBehaviour
 {
    public Transform target;
 
-   public float bounciness;
+   //public float bounciness;
 
    private Vector3 InitialOffset;
 
@@ -17,6 +17,6 @@ public class CameraFollow : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-      this.transform.position = Vector3.Lerp(this.transform.position, target.position + InitialOffset, bounciness);
+      this.transform.position = target.position + InitialOffset;
    }
 }
