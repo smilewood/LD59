@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000b930f094b7d6e9bc6119604c
+  m_ApplyToSortingLayers: 00000000b930f094b7d6e9bc6119604c57734205
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1186,7 +1186,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1281366369
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blaster
   FireCooldown: 1
-  Damage: 30
+  damage: 30
   MaxCharges: 5
   ChargedCooldown: 0.2
   ShotPierce: 1
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoGun
   FireCooldown: 1
-  Damage: 25
+  damage: 20
   DirectionsToShoot: 3
   ShotDelay: 0.2
   ShotPierce: 1
@@ -1397,7 +1397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageAura
   FireCooldown: 0
-  Damage: 10
+  damage: 10
   TickRate: 3
   Radius: 2
 --- !u!1660057539 &9223372036854775807
