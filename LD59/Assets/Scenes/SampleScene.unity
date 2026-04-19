@@ -330,7 +330,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2547382f1ae4c5b41b300204023b9d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  SpawnRadius: 12
+  SpawnRadius: 22.8
   EnemyParentObject: {fileID: 1174551168}
   basicPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
   basicCooldown: 2
@@ -1358,6 +1358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Blaster
   FireCooldown: 1
   Damage: 30
+  MaxCharges: 5
+  ChargedCooldown: 0.2
   ShotPierce: 1
   ShotSpeed: 5
   ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}

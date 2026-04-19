@@ -27,7 +27,7 @@ public class WorldMapGenerator : MonoBehaviour
 
    private void AddTilesAround(int x, int y)
    {
-      for (int i = x-2; i <= x+2; ++i)
+      for (int i = x-3; i <= x+3; ++i)
       {
          for (int j = y-2; j <= y+2; ++j)
          {
