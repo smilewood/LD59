@@ -26,7 +26,7 @@ public class EnemySpawnner : MonoBehaviour
       if(cooldowntimer <= 0)
       {
          Vector2 SpawnLocation = Random.onUnitCircle * SpawnRadius;
-         Instantiate(basicPrefab, SpawnLocation, Quaternion.identity, EnemyParentObject);
+         Instantiate(basicPrefab, this.transform.position + (Vector3)SpawnLocation, Quaternion.identity, EnemyParentObject);
          cooldowntimer = basicCooldown;
       }
    }

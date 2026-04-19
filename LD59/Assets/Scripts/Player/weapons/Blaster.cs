@@ -1,14 +1,20 @@
+using System.Linq;
 using UnityEngine;
 
 public class Blaster : TargetedWeapon
 {
+   [Header("Shot Settings")]
+   public int ShotPierce;
+   public float ShotSpeed;
    public GameObject ShotPrefab;
-   private Transform ShotParent;
+   public Transform ShotParent;
 
-   protected override void Start()
+   public override void Start()
    {
+      ShotParent = GameObject.Find("PlayerShotsParent").transform;
+      PlayerUpgrades upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
+      ShotPierce += upgradeStatus.PierceEffects[upgradeStatus.PierceLevel].Effect;
       base.Start();
-      ShotParent = GameObject.Find("PlayerShotsParent").transform;   
    }
 
    public override float CooldownToNextShot()
@@ -19,6 +25,6 @@ public class Blaster : TargetedWeapon
    public override void FireAtTarget(Vector2 target)
    {
       GameObject newShot = Instantiate(ShotPrefab, this.transform.position, Quaternion.identity, ShotParent);
-      newShot.GetComponent<DirectionShot>().direction = target.normalized;
+      newShot.GetComponent<DirectionShot>().InitializeShot(target.normalized, ShotSpeed, Damage, ShotPierce);
    }
 }

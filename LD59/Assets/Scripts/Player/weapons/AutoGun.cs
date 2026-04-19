@@ -6,11 +6,16 @@ using UnityEngine;
 //TODO: Autogun upgrades should change how much it fires. 
 public class AutoGun : PassiveWeapon
 {
+   [Header("AutoGun Settings")]
    public int DirectionsToShoot;
    public float ShotDelay;
 
-   public GameObject shotPrefab;
-   public Transform shotParent;
+   [Header("Shot Settings")]
+   public int ShotPierce;
+   public float ShotSpeed;
+   public GameObject ShotPrefab;
+   public Transform ShotParent;
+
    private PlayerMove playerFace;
 
    // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,6 +25,7 @@ public class AutoGun : PassiveWeapon
      
       PlayerUpgrades upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
       ShotDelay *= upgradeStatus.FirerateEffects[upgradeStatus.FirerateLevel].Effect;
+      ShotPierce += upgradeStatus.PierceEffects[upgradeStatus.PierceLevel].Effect;
 
       base.Start();
    }
@@ -43,12 +49,11 @@ public class AutoGun : PassiveWeapon
 
       for (int i = 0; i < DirectionsToShoot; i++) 
       {
-         GameObject newShot = Instantiate(shotPrefab, this.transform.position, Quaternion.identity, shotParent);
+         GameObject newShot = Instantiate(ShotPrefab, this.transform.position, Quaternion.identity, ShotParent);
 
          Vector2 shotDirection = (rotation * new Vector2 (Mathf.Cos(AnglePerShot * i), Mathf.Sin(AnglePerShot * i))).normalized;
-         Debug.Log(shotDirection);
 
-         newShot.GetComponent<DirectionShot>().direction = shotDirection;
+         newShot.GetComponent<DirectionShot>().InitializeShot(shotDirection, ShotSpeed, Damage, ShotPierce);
          
          yield return new WaitForSeconds(ShotDelay);
       }

@@ -42,4 +42,24 @@ public class PlayerUpgrades : ScriptableObject
    [NonSerialized]
    public int FirerateLevel = 0;
    public FirerateUpgrade[] FirerateEffects;
+
+   [Serializable]
+   public class DamageUpgrade : Upgrade
+   {
+      public int Effect;
+   }
+
+   [NonSerialized]
+   public int DamageLevel = 0;
+   public DamageUpgrade[] DamageEffects;
+
+   [Serializable]
+   public class PierceUpgrade : Upgrade
+   {
+      public int Effect;
+   }
+
+   [NonSerialized]
+   public int PierceLevel = 0;
+   public PierceUpgrade[] PierceEffects;
 }

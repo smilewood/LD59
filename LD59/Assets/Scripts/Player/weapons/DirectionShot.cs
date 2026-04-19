@@ -6,6 +6,7 @@ public class DirectionShot : MonoBehaviour
    public Vector2 direction;
    public float InitialLifetime;
    public float Pierce;
+   public int Damage;
 
    private float remainingLifetime;
    private float remainingPierce;
@@ -21,10 +22,13 @@ public class DirectionShot : MonoBehaviour
    {
       if (collision.CompareTag("Enemy"))
       {
-         //TODO: Damage the enemy with damage
-         Destroy(collision.gameObject);
+         EnemyHealth health = collision.gameObject.GetComponent<EnemyHealth>();
+         if (health != null)
+         {
+            health.ApplyDamage(Damage);
+         }
 
-         if(--remainingPierce == 0)
+         if (--remainingPierce == 0)
          {
             Destroy(this.gameObject);
          }
@@ -34,11 +38,19 @@ public class DirectionShot : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-      this.transform.position += new Vector3(direction.x, direction.y) * Speed * Time.deltaTime;
+      this.transform.position += (Vector3)direction * Speed * Time.deltaTime;
       remainingLifetime -= Time.deltaTime;
       if(remainingLifetime <= 0)
       {
          Destroy(this.gameObject);
       }
+   }
+
+   public void InitializeShot(Vector2 target, float speed, int damage, int pierce)
+   {
+      direction = target;
+      Speed = speed;
+      Damage = damage;
+      Pierce = remainingPierce = pierce;
    }
 }

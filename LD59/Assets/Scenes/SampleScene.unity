@@ -516,6 +516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676682094}
+  - component: {fileID: 676682095}
   m_Layer: 0
   m_Name: Containers
   m_TagString: Untagged
@@ -541,6 +542,20 @@ Transform:
   - {fileID: 1255052995}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &676682095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676682093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f09f15996bf7164b83084ba3455994d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerUpgrades: {fileID: 11400000, guid: 82402ebaa1692e74f8068862b054016b, type: 2}
+  enemyScaling: {fileID: 11400000, guid: 2bec3264b8bdb6d40a2eb19c12a5e140, type: 2}
 --- !u!1 &956603173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,6 +1229,7 @@ GameObject:
   - component: {fileID: 2015877921}
   - component: {fileID: 2015877923}
   - component: {fileID: 2015877924}
+  - component: {fileID: 2015877925}
   m_Layer: 6
   m_Name: PlayerRoot
   m_TagString: Player
@@ -1233,7 +1249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99295a65755103408ffa96ed178ff9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
-  upgradeStatus: {fileID: 11400000, guid: 82402ebaa1692e74f8068862b054016b, type: 2}
   speed: 4
 --- !u!4 &2015877919
 Transform:
@@ -1341,18 +1356,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1442b1dfbb7df954dac332176650bf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blaster
-  fireAction:
-    m_Name: Fire
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: da1c5f21-1238-4721-942d-4a6b8df245e7
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   FireCooldown: 1
+  Damage: 30
+  ShotPierce: 1
+  ShotSpeed: 5
   ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+  ShotParent: {fileID: 1255052995}
 --- !u!114 &2015877924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015877917}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab95ab322be56744e8e292ff3aeaaf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoGun
+  FireCooldown: 1
+  Damage: 25
+  DirectionsToShoot: 3
+  ShotDelay: 0.2
+  ShotPierce: 1
+  ShotSpeed: 5
+  ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+  ShotParent: {fileID: 1255052995}
+--- !u!114 &2015877925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1361,14 +1391,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2015877917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab95ab322be56744e8e292ff3aeaaf1c, type: 3}
+  m_Script: {fileID: 11500000, guid: e4041a59c01694c44944de06d6b711ae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AutoGun
-  FireCooldown: 1
-  DirectionsToShoot: 3
-  ShotDelay: 0.2
-  shotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
-  shotParent: {fileID: 1255052995}
+  m_EditorClassIdentifier: Assembly-CSharp::DamageAura
+  FireCooldown: 0
+  Damage: 10
+  TickRate: 3
+  Radius: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

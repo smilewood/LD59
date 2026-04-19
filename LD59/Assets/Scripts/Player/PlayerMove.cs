@@ -6,9 +6,6 @@ public class PlayerMove : MonoBehaviour
 {
    InputAction moveAction;
 
-   //This has to be here or the system sometimes can't find the object. super annoyingly inconsistant but this is a game jam so here Unity have this. 
-   public PlayerUpgrades upgradeStatus;
-   
    public float speed = 1;
 
    private Vector2 currentDirection = Vector2.right;
@@ -27,7 +24,7 @@ public class PlayerMove : MonoBehaviour
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
-      upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
+      PlayerUpgrades upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
       speed = upgradeStatus.SpeedBoostEffects[upgradeStatus.SpeedBoostLevel].Effect;
       moveAction = InputSystem.actions.FindAction("Move");
    }

@@ -23,3 +23,9 @@ MonoBehaviour:
   FirerateEffects:
   - Cost: 0
     Effect: 1
+  DamageEffects:
+  - Cost: 0
+    Effect: 0
+  PierceEffects:
+  - Cost: 0
+    Effect: 0

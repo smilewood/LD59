@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7513289582596491339}
   - component: {fileID: 3876098469737572189}
   - component: {fileID: 6855710297712605006}
+  - component: {fileID: 3892129211836234655}
   m_Layer: 7
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -157,3 +158,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ContactDamage: 1
   Cooldown: 0.5
+--- !u!114 &3892129211836234655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502476765317821872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94601214f1a237c4da1914bc5415fe94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  BaseHealth: 100
