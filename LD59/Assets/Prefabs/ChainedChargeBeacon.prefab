@@ -108,5 +108,6 @@ MonoBehaviour:
   beacons:
   - {fileID: 4612055412639586356, guid: 8db75e162139b984d96e0b8bbd9e1664, type: 3}
   - {fileID: 4612055412639586356, guid: 8db75e162139b984d96e0b8bbd9e1664, type: 3}
-  SpawnRadius: 80
+  SpawnRadius: 100
+  PointerPrefab: {fileID: 2978335835859489963, guid: e06c703908c30da429c672ecd6181d88, type: 3}
   SpawnOnStart: 0

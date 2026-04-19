@@ -1140,6 +1140,7 @@ MonoBehaviour:
   - {fileID: 388774055456938461, guid: 2c38eb7d91969a64aa7b154e77948f5c, type: 3}
   - {fileID: 388774055456938461, guid: 2c38eb7d91969a64aa7b154e77948f5c, type: 3}
   SpawnRadius: 60
+  PointerPrefab: {fileID: 2978335835859489963, guid: e06c703908c30da429c672ecd6181d88, type: 3}
   SpawnOnStart: 1
 --- !u!1 &1893943449
 GameObject:
@@ -1267,7 +1268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99295a65755103408ffa96ed178ff9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
-  speed: 4
+  speed: 5
 --- !u!4 &2015877919
 Transform:
   m_ObjectHideFlags: 0
