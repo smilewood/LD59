@@ -23,6 +23,7 @@ public class DamageAura : PassiveWeapon
       damageCollider.radius = Radius;
       damageCollider.isTrigger = true;
       damageCollider.enabled = false;
+      damageCollider.excludeLayers |= LayerMask.GetMask("InteractionArea");
       base.Start();
    }
 
