@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public abstract class TargetedWeapon : Weapon
+public abstract class TargetedWeapon<T> : Weapon<T> where T : WeaponUpgradeTier
 {
    private InputAction fireAction;
    private InputAction mouseAction;
@@ -48,4 +48,5 @@ public abstract class TargetedWeapon : Weapon
    }
 
    public abstract void FireAtTarget(Vector2 target);
+
 }

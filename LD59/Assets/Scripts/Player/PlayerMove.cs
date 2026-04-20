@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
    InputAction moveAction;
-
-   public float speed = 1;
+   private PlayerUpgradeSystem upgrades;
+   private float ModifiedSpeed => upgrades.CurrentModifiers.Speed(BaseSpeed);
+   public float BaseSpeed;
 
    private Vector2 currentDirection = Vector2.right;
    public Vector2 CurrentDirection
@@ -24,8 +25,7 @@ public class PlayerMove : MonoBehaviour
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
-      PlayerUpgrades upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
-      speed = upgradeStatus.SpeedBoostEffects[upgradeStatus.SpeedBoostLevel].Effect;
+      upgrades = this.gameObject.GetComponent<PlayerUpgradeSystem>();
       moveAction = InputSystem.actions.FindAction("Move");
    }
 
@@ -33,7 +33,7 @@ public class PlayerMove : MonoBehaviour
    void Update()
    {
       CurrentDirection = moveAction.ReadValue<Vector2>().normalized;
-      Vector2 delta = moveAction.ReadValue<Vector2>().normalized * speed * Time.deltaTime;
+      Vector2 delta = moveAction.ReadValue<Vector2>().normalized * ModifiedSpeed * Time.deltaTime;
       this.transform.position = this.transform.position + new Vector3(delta.x, delta.y, this.transform.position.z);
    }
 }

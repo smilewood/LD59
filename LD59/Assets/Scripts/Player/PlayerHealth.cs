@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,12 +13,13 @@ public class PlayerHealth : MonoBehaviour
    public static PlayerDamageEvent DamagePlayer = new PlayerDamageEvent();
    public int MaxHp;
    public int CurrentHp;
+   private PlayerUpgradeSystem upgrades;
 
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
-      PlayerUpgrades upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
-      MaxHp = upgradeStatus.HealthBoostEffects[upgradeStatus.HealthBoostLevel].Effect;
+      upgrades = this.gameObject.GetComponent<PlayerUpgradeSystem>();
+      UpdateHealthTotals();
       CurrentHp = MaxHp;
       OnPlayerHealthChanged.Invoke(CurrentHp, MaxHp);
       DamagePlayer.AddListener(ApplyDamage);
@@ -29,5 +31,24 @@ public class PlayerHealth : MonoBehaviour
       OnPlayerHealthChanged.Invoke(CurrentHp, MaxHp);
    }
 
+   public IEnumerator HealthRegen()
+   {
+      while (true)
+      {
+         if(upgrades.CurrentModifiers.HealthRegen > 0)
+         {
+            yield return new WaitForSeconds(1 / upgrades.CurrentModifiers.HealthRegen);
+            CurrentHp += CurrentHp < MaxHp ? 1 : 0;
+         }
+         yield return null;
+      }
+   }
+
+   public void UpdateHealthTotals()
+   {
+      int oldMax = MaxHp;
+      MaxHp = upgrades.CurrentModifiers.HealthAdd;
+      CurrentHp += MaxHp - oldMax;
+   }
 
 }

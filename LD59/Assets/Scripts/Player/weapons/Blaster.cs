@@ -1,33 +1,43 @@
+using System;
 using System.Collections;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Blaster : TargetedWeapon
+[Serializable]
+public class ShotFiringWeaponUpgradeTier : WeaponUpgradeTier
 {
-   [Header("Blaster Settings")]
-   public int MaxCharges;
-   public float ChargedCooldown;
-   private int CurrentCharges;
-
    [Header("Shot Settings")]
    public int ShotPierce;
    public float ShotSpeed;
    public GameObject ShotPrefab;
+}
+
+[Serializable]
+public class BlasterUpgradeTier : ShotFiringWeaponUpgradeTier
+{
+   [Header("Blaster Settings")]
+   public int MaxCharges;
+   public float ChargedCooldown;
+}
+
+public class Blaster : TargetedWeapon<BlasterUpgradeTier>
+{
+   private int CurrentCharges;
+
    public Transform ShotParent;
+
 
    public override void Start()
    {
       ShotParent = GameObject.Find("PlayerShotsParent").transform;
-      PlayerUpgrades upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
-      ShotPierce += upgradeStatus.PierceEffects[upgradeStatus.PierceLevel].Effect;
       base.Start();
       StartCoroutine(BlasterCharge());
    }
 
    public override float CooldownToNextShot()
    {
-      return CurrentCharges > 0 ? ChargedCooldown : FireCooldown;
+      return CurrentCharges > 0 ? Modifiers.Firerate(Values.ChargedCooldown) : FireCooldown;
    }
 
    private IEnumerator BlasterCharge()
@@ -35,14 +45,14 @@ public class Blaster : TargetedWeapon
       while (true)
       {
          yield return new WaitForSeconds(FireCooldown);
-         CurrentCharges += CurrentCharges < MaxCharges ? 1 : 0;
+         CurrentCharges += CurrentCharges < Values.MaxCharges ? 1 : 0;
       }
    }
 
    public override void FireAtTarget(Vector2 target)
    {
       --CurrentCharges;
-      GameObject newShot = Instantiate(ShotPrefab, this.transform.position, Quaternion.identity, ShotParent);
-      newShot.GetComponent<DirectionShot>().InitializeShot(target.normalized, ShotSpeed, Damage, ShotPierce);
+      GameObject newShot = Instantiate(Values.ShotPrefab, this.transform.position, Quaternion.identity, ShotParent);
+      newShot.GetComponent<DirectionShot>().InitializeShot(target.normalized, Values.ShotSpeed * Modifiers.ShotSpeedMult, Damage, Values.ShotPierce + Modifiers.PierceAdd);
    }
 }

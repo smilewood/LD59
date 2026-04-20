@@ -1,30 +1,30 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DamageAura : PassiveWeapon
+[Serializable]
+public class AuraUpgradeTier : WeaponUpgradeTier
 {
    [Tooltip("Ticks per second")]
    public float TickRate;
    public float Radius;
+}
+
+public class DamageAura : PassiveWeapon<AuraUpgradeTier>
+{
 
    private CircleCollider2D damageCollider;
 
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    public override void Start()
    {
-      if(TickRate == 0)
-      {
-         TickRate = 1;
-      }
-      FireCooldown = (1f / TickRate);
-
       damageCollider = gameObject.AddComponent<CircleCollider2D>();
-      damageCollider.radius = Radius;
       damageCollider.isTrigger = true;
       damageCollider.enabled = false;
       damageCollider.excludeLayers |= LayerMask.GetMask("InteractionArea");
       base.Start();
+      ApplyUpgradeTier(0);
    }
 
    public override float CooldownToNextShot()
@@ -45,7 +45,7 @@ public class DamageAura : PassiveWeapon
 
    private void OnTriggerEnter2D(Collider2D collision)
    {
-      if (collision.gameObject.CompareTag("Enemy"))
+      if (enabled && collision.gameObject.CompareTag("Enemy"))
       {
          EnemyHealth health = collision.gameObject.GetComponent<EnemyHealth>();
          if (health != null)
@@ -53,5 +53,17 @@ public class DamageAura : PassiveWeapon
             health.ApplyDamage(Damage);
          }
       }
+   }
+
+   public override void ApplyUpgradeTier(int newTier)
+   {
+      currentTier = newTier;
+      if (Values.TickRate == 0)
+      {
+         Values.TickRate = 1;
+      }
+      Values.FireCooldown = (1f / Values.TickRate);
+      damageCollider.radius = Values.Radius;
+
    }
 }

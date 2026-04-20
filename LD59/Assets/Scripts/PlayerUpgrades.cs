@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+//TODO: This is going to need a little reworking since the upgrades are going to persist in the editor
+//For now I am going to just reset the levels on launch. 
 
 [CreateAssetMenu(fileName = "PlayerUpgrades", menuName = "Scriptable Objects/PlayerUpgrades")]
 public class PlayerUpgrades : ScriptableObject
@@ -14,7 +16,8 @@ public class PlayerUpgrades : ScriptableObject
    [Serializable]
    public class HealthUpgrade : Upgrade
    {
-      public int Effect;
+      public int MaxHealth;
+      public int HealthRegen;
    }
 
    [NonSerialized]
@@ -25,7 +28,7 @@ public class PlayerUpgrades : ScriptableObject
    [Serializable]
    public class SpeedUpgrade : Upgrade
    {
-      public float Effect;
+      public float SpeedMultiplier;
    }
 
    [NonSerialized]
@@ -36,7 +39,7 @@ public class PlayerUpgrades : ScriptableObject
    [Serializable]
    public class FirerateUpgrade : Upgrade
    {
-      public float Effect;
+      public float FirerateMultiplier;
    }
 
    [NonSerialized]
@@ -46,7 +49,8 @@ public class PlayerUpgrades : ScriptableObject
    [Serializable]
    public class DamageUpgrade : Upgrade
    {
-      public int Effect;
+      public float DamageMultiplier;
+      public int AddedDamage;
    }
 
    [NonSerialized]
@@ -56,10 +60,15 @@ public class PlayerUpgrades : ScriptableObject
    [Serializable]
    public class PierceUpgrade : Upgrade
    {
-      public int Effect;
+      public int AdditionalPierce;
    }
 
    [NonSerialized]
    public int PierceLevel = 0;
    public PierceUpgrade[] PierceEffects;
+
+   private void OnEnable()
+   {
+      HealthBoostLevel = SpeedBoostLevel = FirerateLevel = DamageLevel = PierceLevel = 0;
+   }
 }

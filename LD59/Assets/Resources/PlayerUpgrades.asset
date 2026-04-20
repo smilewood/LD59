@@ -14,18 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUpgrades
   HealthBoostEffects:
   - Cost: 0
-    Effect: 10
+    MaxHealth: 10
+    HealthRegen: 0
   SpeedBoostEffects:
   - Cost: 0
-    Effect: 2
+    SpeedMultiplier: 1
   - Cost: 0
-    Effect: 5
+    SpeedMultiplier: 1.2
   FirerateEffects:
   - Cost: 0
-    Effect: 1
+    FirerateMultiplier: 1
   DamageEffects:
   - Cost: 0
-    Effect: 0
+    DamageMultiplier: 1
+    AddedDamage: 0
   PierceEffects:
   - Cost: 0
-    Effect: 0
+    AdditionalPierce: 0
