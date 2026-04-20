@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyScaling", menuName = "Scriptable Objects/EnemyScaling")]
@@ -21,4 +23,17 @@ public class EnemyScaling : ScriptableObject
    }
 
    public float DamageTimeMultiplier;
+
+   public List<EnemyType> EnemyTypes;
+}
+
+[Serializable]
+public struct EnemyType
+{
+   public GameObject EnemyPrefab;
+   //public Sprite EnemyImage;
+   public string EnemyName;
+   [TextArea]
+   public string EnemyDescription;
+   public int PointsCost;
 }

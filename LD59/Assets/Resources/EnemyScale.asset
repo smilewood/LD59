@@ -15,3 +15,24 @@ MonoBehaviour:
   HealthDoubleTime: 500
   SpeedDoubleTime: 1000
   DamageTimeMultiplier: 0
+  EnemyTypes:
+  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
+    EnemyName: Circle
+    EnemyDescription: Round
+    PointsCost: 1
+  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
+    EnemyName: Circle2
+    EnemyDescription: Round
+    PointsCost: 1
+  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
+    EnemyName: Circle3
+    EnemyDescription: Round
+    PointsCost: 1
+  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
+    EnemyName: Circle4
+    EnemyDescription: Round
+    PointsCost: 1
+  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
+    EnemyName: Circle
+    EnemyDescription: Round
+    PointsCost: 1

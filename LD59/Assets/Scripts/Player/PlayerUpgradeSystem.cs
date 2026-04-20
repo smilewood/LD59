@@ -56,6 +56,7 @@ public class PlayerUpgradeSystem : MonoBehaviour
    void Awake()
    {
       upgradeStatus = Resources.FindObjectsOfTypeAll<PlayerUpgrades>().First();
+      
       UpdateModifiers();
    }
 
@@ -72,10 +73,11 @@ public class PlayerUpgradeSystem : MonoBehaviour
          weapon.enabled = false;
          availablePassiveWeaponNames.Add(weapon.ToString());
       }
+      
 
       //TODO: Adding one of each by default to test behavior, this should be removed
-      AddPassive(availablePassiveItems[0]);
-      AddPassive(availablePassiveWeapons[0]);
+      //AddPassive(availablePassiveItems[0]);
+      //AddPassive(availablePassiveWeapons[0]);
    }
 
    public void AddPassive(IEquipmentSlotItem item)
@@ -134,5 +136,13 @@ public class PlayerUpgradeSystem : MonoBehaviour
          return index == -1 ? ActiveItem : PassiveSlots[index];
       }
    }
+
+   public IEnumerable<IEquipmentSlotItem> GetAvailablePassiveEquipment()
+   {
+      IEnumerable<IEquipmentSlotItem> availableWeapons = availablePassiveWeapons.Where(w => !PassiveSlots.Select(s => s.item).Contains(w));
+      IEnumerable<IEquipmentSlotItem> availableItems = availablePassiveItems.Where(i => !PassiveSlots.Select(s => s.item).Contains(i));
+      return availableItems.Concat(availableWeapons);
+   }
+
 
 }

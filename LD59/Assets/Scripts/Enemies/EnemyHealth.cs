@@ -11,8 +11,11 @@ public class EnemyHealth : MonoBehaviour
 
    private int currentHealth;
    private int maxHealth;
-   public GameObject ExpPickup;
 
+   [Header("Experience")]
+   public GameObject ExpPickup;
+   public int ExpAmount;
+   public float ScatterRadius;
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
@@ -29,7 +32,11 @@ public class EnemyHealth : MonoBehaviour
       OnDamageRecieved.Invoke(damageAmount, currentHealth, maxHealth);
       if (currentHealth < 0)
       {
-         Instantiate(ExpPickup, this.transform.position, Quaternion.identity, this.transform.parent);
+         for(int i = 0; i < ExpAmount; ++i)
+         {
+            GameObject pickup = Instantiate(ExpPickup, this.transform.position, Quaternion.identity, this.transform.parent);
+            pickup.GetComponent<ExperiencePickup>().Scatter(Random.insideUnitCircle * ScatterRadius);
+         }
          Destroy(this.gameObject);
       }
    }

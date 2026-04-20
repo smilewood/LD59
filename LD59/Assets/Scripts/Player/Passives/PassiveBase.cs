@@ -14,6 +14,8 @@ public interface IEquipmentSlotItem
 
    public string EquipmentName { get; }
 
+   public string EquipmentDescription { get; }
+
    public int UpgradeTier { get; }
 }
 
@@ -36,6 +38,14 @@ public class PassiveSlot : IEquipmentSlotItem
       get
       {
          return item.EquipmentName;
+      }
+   }
+
+   public string EquipmentDescription
+   {
+      get
+      {
+         return item.EquipmentDescription;
       }
    }
 
@@ -77,6 +87,16 @@ public abstract class PassiveBase : ScriptableObject, IEquipmentSlotItem
       get
       {
          return Name;
+      }
+   }
+
+   [TextArea]
+   public string Description;
+   public string EquipmentDescription
+   {
+      get
+      {
+         return Description;
       }
    }
 

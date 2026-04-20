@@ -15,6 +15,8 @@ public class WeaponUpgradeTier
 public abstract class Weapon<T> : MonoBehaviour, IEquipmentSlotItem where T : WeaponUpgradeTier
 {
    public string Name;
+   [TextArea]
+   public string Description;
    public List<T> Upgrades;
    public T Values => Upgrades[currentTier];
    protected int currentTier;
@@ -44,6 +46,14 @@ public abstract class Weapon<T> : MonoBehaviour, IEquipmentSlotItem where T : We
       get
       {
          return Name;
+      }
+   }
+
+   public string EquipmentDescription
+   {
+      get
+      {
+         return Description;
       }
    }
 

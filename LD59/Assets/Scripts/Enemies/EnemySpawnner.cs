@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using NUnit.Framework;
 using UnityEngine;
 
 public class EnemySpawnner : MonoBehaviour
@@ -8,6 +11,9 @@ public class EnemySpawnner : MonoBehaviour
    public float basicCooldown;
    private float cooldowntimer;
 
+   public EnemyScaling EnemySource;
+   private List<EnemyType> ActiveEnemies;
+
    private void OnDrawGizmosSelected()
    {
       Gizmos.DrawWireSphere(this.transform.position, SpawnRadius);
@@ -16,7 +22,13 @@ public class EnemySpawnner : MonoBehaviour
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
+      ActiveEnemies = new List<EnemyType>();
+      AddEnemyType(EnemySource.EnemyTypes[Random.Range(0, EnemySource.EnemyTypes.Count)]);
+   }
 
+   public void AddEnemyType(EnemyType enemyType)
+   {
+      ActiveEnemies.Add(enemyType);
    }
 
    // Update is called once per frame
@@ -26,8 +38,13 @@ public class EnemySpawnner : MonoBehaviour
       if(cooldowntimer <= 0)
       {
          Vector2 SpawnLocation = Random.onUnitCircle * SpawnRadius;
-         Instantiate(basicPrefab, this.transform.position + (Vector3)SpawnLocation, Quaternion.identity, EnemyParentObject);
+         Instantiate(ActiveEnemies[Random.Range(0, ActiveEnemies.Count)].EnemyPrefab, this.transform.position + (Vector3)SpawnLocation, Quaternion.identity, EnemyParentObject);
          cooldowntimer = basicCooldown;
       }
+   }
+
+   public IEnumerable<EnemyType> AvailableEnemies()
+   {
+      return EnemySource.EnemyTypes.Where(e => !ActiveEnemies.Contains(e));
    }
 }

@@ -294,6 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   BaseHealth: 100
   ExpPickup: {fileID: 104448659073243316, guid: 8606481e0a5166641b07f81202e6edc0, type: 3}
+  ExpAmount: 1
+  ScatterRadius: 2
 --- !u!1 &8462958911595345350
 GameObject:
   m_ObjectHideFlags: 0
