@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class LevelUpChoice : MonoBehaviour
 {
    public PlayerUpgradeSystem upgradeSystem;
-
+   public ExpBar expBar;
    private IEquipmentSlotItem LeftChoice, RightChoice;
    public GameObject LeftPanel, RightPanel;
    public void RunLevelChoice(int level)
@@ -66,6 +66,7 @@ public class LevelUpChoice : MonoBehaviour
    {
       upgradeSystem.UpdateModifiers();
       Time.timeScale = 1;
+      expBar.UpdateBar(0, 1);
       this.gameObject.SetActive(false);
    }
 }

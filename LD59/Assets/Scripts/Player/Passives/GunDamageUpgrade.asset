@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GunDamageUpgrade
   Icon: {fileID: 0}
   Name: Weapon Damage
+  Description: 'Upgrade Damage and shot pierce
+
+
+    Level 1:
+
+    x1.1 damage'
   upgradeTiers:
-  - DamageMult: 1
+  - DamageMult: 1.1
     PierceAdd: 0
     UpgradeText: BASE
   - DamageMult: 1.2

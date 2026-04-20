@@ -121,22 +121,8 @@ public class PlayerUpgradeSystem : MonoBehaviour
 
    public (IEquipmentSlotItem, IEquipmentSlotItem) GetUpgradeChoices()
    {
-      int choice1 = Random.Range(-1, PassiveSlots.Count());
-      int choice2 = -2;
-      if (PassiveSlots.Any())
-      {
-         do
-         {
-            choice2 = Random.Range(-1, PassiveSlots.Count());
-         } while (choice2 == choice1);
-      }
-
-      return (itemAtIndex(choice1), choice2 == -2 ? null : itemAtIndex(choice2));
-
-      IEquipmentSlotItem itemAtIndex(int index)
-      {
-         return index == -1 ? ActiveItem : PassiveSlots[index];
-      }
+      List<IEquipmentSlotItem> items = PassiveSlots.Append(ActiveItem).OrderBy(item => !item.HasUpgrade(item.UpgradeTier + 1)).ThenBy(i => Random.value).ToList();
+      return (items[0], items[1]);
    }
 
    public IEnumerable<IEquipmentSlotItem> GetAvailablePassiveEquipment()

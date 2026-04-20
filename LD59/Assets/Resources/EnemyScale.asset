@@ -18,21 +18,18 @@ MonoBehaviour:
   EnemyTypes:
   - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
     EnemyName: Circle
-    EnemyDescription: Round
+    EnemyDescription: 'Round.
+
+      Middling health.
+
+      Don''t let them surround
+      you and you will be fine'
     PointsCost: 1
-  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
-    EnemyName: Circle2
-    EnemyDescription: Round
+  - EnemyPrefab: {fileID: 7172402692317850739, guid: d2352eadee8c2d747b5ba52dde0fdfb6, type: 3}
+    EnemyName: Speed Star
+    EnemyDescription: Fast, low health, hurt when they swarm
     PointsCost: 1
-  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
-    EnemyName: Circle3
-    EnemyDescription: Round
-    PointsCost: 1
-  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
-    EnemyName: Circle4
-    EnemyDescription: Round
-    PointsCost: 1
-  - EnemyPrefab: {fileID: 6502476765317821872, guid: 44f49843a3a180044ada54d146b57483, type: 3}
-    EnemyName: Circle
-    EnemyDescription: Round
+  - EnemyPrefab: {fileID: 540291525104715116, guid: 86a4872efc5aeb64d93bf8c1d10c2202, type: 3}
+    EnemyName: Tanky Square
+    EnemyDescription: 'Chunky, Slow, and hard to stop. '
     PointsCost: 1

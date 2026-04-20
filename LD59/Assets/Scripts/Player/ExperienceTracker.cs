@@ -11,17 +11,20 @@ public class ExperienceTracker : MonoBehaviour
    public int ExpLevelScaler;
 
    public GameObject LevelUpPanel;
+   public ExpBar expBar;
 
 
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
       ExperiencePickup.AddListener(OnGetExp);
+      expBar.UpdateBar(currentEXP, targetExp);
    }
 
    public void OnGetExp()
    {
       ++currentEXP;
+      expBar.UpdateBar(currentEXP, targetExp);
       if(currentEXP >= targetExp)
       {
          LevelUp();

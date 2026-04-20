@@ -45,6 +45,7 @@ public class EnemySpawnner : MonoBehaviour
 
    public IEnumerable<EnemyType> AvailableEnemies()
    {
-      return EnemySource.EnemyTypes.Where(e => !ActiveEnemies.Contains(e));
+      //Allow adding the same enemy to the list multiple tims, increasing the odds of any given type. 
+      return EnemySource.EnemyTypes;//.Where(e => !ActiveEnemies.Contains(e));
    }
 }

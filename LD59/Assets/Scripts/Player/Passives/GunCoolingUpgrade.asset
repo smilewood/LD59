@@ -14,8 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GunCoolingUpgrade
   Icon: {fileID: 0}
   Name: Weapon Cooling
+  Description: 'Improve firerage, shots peed and number of shots
+
+
+    Level 1:
+
+    1.25x
+    firerate'
   upgradeTiers:
-  - FirerateMult: 1
+  - FirerateMult: 1.25
     ShotSpeedMult: 1
     ShotsAdd: 0
     UpgradeText: BASE

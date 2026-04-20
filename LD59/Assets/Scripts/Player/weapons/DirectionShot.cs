@@ -22,11 +22,7 @@ public class DirectionShot : MonoBehaviour
    {
       if (collision.CompareTag("Enemy"))
       {
-         EnemyHealth health = collision.gameObject.GetComponent<EnemyHealth>();
-         if (health != null)
-         {
-            health.ApplyDamage(Damage);
-         }
+         collision.gameObject.SendMessageUpwards("ApplyDamage", Damage);
 
          if (--remainingPierce == 0)
          {

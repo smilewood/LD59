@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 5498169349779492165}
   - component: {fileID: 9009463034585020086}
   - component: {fileID: 8558709798426671247}
+  - component: {fileID: 1131541421799351578}
   m_Layer: 8
   m_Name: ChargeBeacon
   m_TagString: Untagged
@@ -284,6 +285,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1131541421799351578}
+        m_TargetAssemblyTypeName: SpawnBeacons, Assembly-CSharp
+        m_MethodName: SpawnListedBeacons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &8558709798426671247
 Rigidbody2D:
   serializedVersion: 5
@@ -311,3 +324,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1131541421799351578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957598190879704262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54344a936f538064580085e51d551dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnBeacons
+  beacons:
+  - BeaconPrefab: {fileID: 4582767180705996686, guid: 99b04f763d48255439c3ec989a74a118, type: 3}
+    PointerPrefab: {fileID: 4346238412615700772, guid: 0024f232dcceeee4e9d4efe9c2a0a6a4, type: 3}
+    Distance: 120
+  SpawnOnStart: 0

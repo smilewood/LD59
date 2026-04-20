@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8087164308795900850
+--- !u!1001 &3662358896917191496
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 957598190879704262, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
       propertyPath: m_Name
-      value: UpgradeBeacon
+      value: ChargeBeacon2
       objectReference: {fileID: 0}
     - target: {fileID: 1131541421799351578, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
       propertyPath: beacons.Array.data[0].Distance
@@ -60,56 +60,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9009463034585020086, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-      propertyPath: OnBeaconCharged.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9009463034585020086, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-      propertyPath: OnBeaconCharged.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9009463034585020086, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-      propertyPath: OnBeaconCharged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 8108322984652355364}
-    - target: {fileID: 9009463034585020086, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-      propertyPath: OnBeaconCharged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9009463034585020086, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-      propertyPath: OnBeaconCharged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ActivateSelectionMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 9009463034585020086, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-      propertyPath: OnBeaconCharged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: ActivateEquipmentMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9009463034585020086, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-      propertyPath: OnBeaconCharged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 957598190879704262, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8108322984652355364}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
---- !u!1 &9039132836901046132 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 957598190879704262, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
-  m_PrefabInstance: {fileID: 8087164308795900850}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8108322984652355364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9039132836901046132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a1bd1e70800e74ba9cd5b8d2e2a243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ActivateEquipmentMenu

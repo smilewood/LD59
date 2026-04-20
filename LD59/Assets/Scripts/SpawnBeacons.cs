@@ -1,13 +1,19 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnBeacons : MonoBehaviour
 {
-   public List<GameObject> beacons;
-   public float SpawnRadius;
+   [Serializable]
+   public struct BeaconSpawn
+   {
+      public GameObject BeaconPrefab;
+      public GameObject PointerPrefab;
+      public float Distance;
+   }
+   public List<BeaconSpawn> beacons;
    private Transform parentObject;
    private Transform playerRoot;
-   public GameObject PointerPrefab;
    public bool SpawnOnStart;
 
    // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,11 +29,11 @@ public class SpawnBeacons : MonoBehaviour
 
    public void SpawnListedBeacons()
    {
-      foreach (GameObject beacon in beacons)
+      foreach (BeaconSpawn beacon in beacons)
       {
-         Vector2 SpawnLocation = Random.onUnitCircle * SpawnRadius;
-         GameObject newBeacon = Instantiate(beacon, this.transform.position + (Vector3)SpawnLocation, Quaternion.identity, parentObject);
-         GameObject pointer = Instantiate(PointerPrefab, playerRoot);
+         Vector2 SpawnLocation = UnityEngine.Random.onUnitCircle * beacon.Distance;
+         GameObject newBeacon = Instantiate(beacon.BeaconPrefab, this.transform.position + (Vector3)SpawnLocation, Quaternion.identity, parentObject);
+         GameObject pointer = Instantiate(beacon.PointerPrefab, playerRoot);
          pointer.GetComponent<PointAtTarget>().Target = newBeacon.transform;
       }
       Destroy(this);

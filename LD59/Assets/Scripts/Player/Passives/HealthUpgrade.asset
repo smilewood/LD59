@@ -14,13 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthUpgrade
   Icon: {fileID: 0}
   Name: Armor Platimg
+  Description: 'Improvements to survivability:
+
+    Upgrades to health and health
+    regen
+
+
+    Level 1:
+
+    +10 HP'
   upgradeTiers:
-  - BonusHealth: 0
+  - BonusHealth: 10
     HealthRegen: 0
     UpgradeText: BASE
-  - BonusHealth: 10
+  - BonusHealth: 20
     HealthRegen: 0
     UpgradeText: +10 HP
-  - BonusHealth: 10
+  - BonusHealth: 20
     HealthRegen: 0.1
     UpgradeText: +0.1 HP regen
