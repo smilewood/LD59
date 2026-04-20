@@ -4960,14 +4960,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoGun
   Name: Auto-Turret
-  Description: 
+  Description: 'Perodically fire heavy shots in several directions around the player. '
   Upgrades:
-  - Damage: 25
+  - Damage: 40
     FireCooldown: 2
     UpgradeText: BASE
-    ShotPierce: 1
+    ShotPierce: 2
     ShotSpeed: 8
-    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
     DirectionsToShoot: 2
     ShotDelay: 0.5
   ShotParent: {fileID: 1255052995}
@@ -4984,9 +4984,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageAura
   Name: Nano Swarm
-  Description: 
+  Description: 'Maintain a damageing area around the player, damages all enemies
+    in the zone. '
   Upgrades:
-  - Damage: 10
+  - Damage: 5
     FireCooldown: 0
     UpgradeText: BASE
     TickRate: 2
