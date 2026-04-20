@@ -13,7 +13,7 @@ public class AuraUpgradeTier : WeaponUpgradeTier
 
 public class DamageAura : PassiveWeapon<AuraUpgradeTier>
 {
-
+   public GameObject AuraImage;
    private CircleCollider2D damageCollider;
 
    // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,8 +23,14 @@ public class DamageAura : PassiveWeapon<AuraUpgradeTier>
       damageCollider.isTrigger = true;
       damageCollider.enabled = false;
       damageCollider.excludeLayers |= LayerMask.GetMask("InteractionArea");
+
       base.Start();
       ApplyUpgradeTier(0);
+   }
+
+   private void OnEnable()
+   {
+      AuraImage.SetActive(true);
    }
 
    public override float CooldownToNextShot()
@@ -64,6 +70,7 @@ public class DamageAura : PassiveWeapon<AuraUpgradeTier>
       }
       Values.FireCooldown = (1f / Values.TickRate);
       damageCollider.radius = Values.Radius;
+      AuraImage.transform.localScale = Vector3.one * Values.Radius * 2;
 
    }
 }

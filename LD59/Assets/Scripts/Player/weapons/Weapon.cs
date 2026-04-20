@@ -9,10 +9,12 @@ public class WeaponUpgradeTier
    public int Damage;
    [Tooltip("Time between shots")]
    public float FireCooldown;
+   [TextArea]
+   public string UpgradeText;
 }
 public abstract class Weapon<T> : MonoBehaviour, IEquipmentSlotItem where T : WeaponUpgradeTier
 {
-
+   public string Name;
    public List<T> Upgrades;
    public T Values => Upgrades[currentTier];
    protected int currentTier;
@@ -26,6 +28,22 @@ public abstract class Weapon<T> : MonoBehaviour, IEquipmentSlotItem where T : We
       get
       {
          return Modifiers.Damage(Upgrades[currentTier].Damage) + UnityEngine.Random.Range(-2, 2);
+      }
+   }
+
+   public int UpgradeTier
+   {
+      get
+      {
+         return currentTier;
+      }
+   }
+
+   public string EquipmentName
+   {
+      get
+      {
+         return Name;
       }
    }
 
@@ -53,8 +71,8 @@ public abstract class Weapon<T> : MonoBehaviour, IEquipmentSlotItem where T : We
    {
       currentTier = newTier;
    }
-   public GameObject GetUpgradeButton(int tier)
+   public string GetUpgradeText(int tier)
    {
-      return null;
+      return Upgrades[tier].UpgradeText;
    }
 }

@@ -9,15 +9,17 @@ public class GunCoolingUpgrade : PassiveBase
    [Serializable]
    public struct CoolingUpgrade
    {
-      public float FirerateMult, SpeedMult;
-      public int PierceAdd;
+      public float FirerateMult, ShotSpeedMult;
+      public int ShotsAdd;
+      [TextArea]
+      public string UpgradeText;
    }
 
    public List<CoolingUpgrade> upgradeTiers;
 
-   public override GameObject GetUpgradeButton(int currentTier)
+   public override string GetUpgradeText(int currentTier)
    {
-      return null;
+      return upgradeTiers[currentTier].UpgradeText;
    }
 
    public override bool HasUpgrade(int currentTier)
@@ -28,7 +30,7 @@ public class GunCoolingUpgrade : PassiveBase
    public override void UpdateModifiers(ref PlayerEquipmentModifiers modifiers, int currentTier)
    {
       modifiers.FirerateMult += upgradeTiers[currentTier].FirerateMult;
-      modifiers.ShotSpeedMult += upgradeTiers[currentTier].SpeedMult;
-      modifiers.PierceAdd += upgradeTiers[currentTier].PierceAdd;
+      modifiers.ShotSpeedMult += upgradeTiers[currentTier].ShotSpeedMult;
+      modifiers.ShotsAdd += upgradeTiers[currentTier].ShotsAdd;
    }
 }

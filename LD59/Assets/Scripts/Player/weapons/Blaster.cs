@@ -45,7 +45,7 @@ public class Blaster : TargetedWeapon<BlasterUpgradeTier>
       while (true)
       {
          yield return new WaitForSeconds(FireCooldown);
-         CurrentCharges += CurrentCharges < Values.MaxCharges ? 1 : 0;
+         CurrentCharges += CurrentCharges < (Values.MaxCharges + Modifiers.ShotsAdd) ? 1 : 0;
       }
    }
 

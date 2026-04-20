@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ac4f5b2caaa3d4dbc213f7e77ae88a, type: 3}
+  m_Name: HealthUpgrade
+  m_EditorClassIdentifier: Assembly-CSharp::HealthUpgrade
+  Icon: {fileID: 0}
+  Name: Armor Platimg
+  upgradeTiers:
+  - BonusHealth: 0
+    HealthRegen: 0
+    UpgradeText: BASE
+  - BonusHealth: 10
+    HealthRegen: 0
+    UpgradeText: +10 HP
+  - BonusHealth: 10
+    HealthRegen: 0.1
+    UpgradeText: +0.1 HP regen

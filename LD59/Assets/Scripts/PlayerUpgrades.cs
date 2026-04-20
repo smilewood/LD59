@@ -7,10 +7,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerUpgrades", menuName = "Scriptable Objects/PlayerUpgrades")]
 public class PlayerUpgrades : ScriptableObject
 {
+   public int SignalPoints;
+   public int initialPoints;
+
    [Serializable]
    public abstract class Upgrade
    {
       public int Cost;
+      public Sprite StoreImage;
+      public string UpgradeName;
    }
 
    [Serializable]
@@ -69,6 +74,7 @@ public class PlayerUpgrades : ScriptableObject
 
    private void OnEnable()
    {
+      SignalPoints = initialPoints;
       HealthBoostLevel = SpeedBoostLevel = FirerateLevel = DamageLevel = PierceLevel = 0;
    }
 }

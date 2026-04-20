@@ -3,6 +3,7 @@ using System.Linq;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public struct PlayerEquipmentModifiers
 {
@@ -14,10 +15,11 @@ public struct PlayerEquipmentModifiers
    public int HealthAdd;
    public float HealthRegen;
    public float ShotSpeedMult;
+   public float AreaAdd;
 
    public float Firerate(float weaponBaseRate)
    {
-      return (weaponBaseRate) * (1/FirerateMult);
+      return (weaponBaseRate) * (1 / FirerateMult);
    }
 
    public int Damage(int baseDamage)
@@ -33,6 +35,7 @@ public struct PlayerEquipmentModifiers
 
 public class PlayerUpgradeSystem : MonoBehaviour
 {
+
    public List<PassiveBase> availablePassiveItems;
    private List<IEquipmentSlotItem> availablePassiveWeapons;
    public List<string> availablePassiveWeaponNames;
@@ -40,6 +43,7 @@ public class PlayerUpgradeSystem : MonoBehaviour
    public int NumberOfSlots;
 
    private List<PassiveSlot> PassiveSlots = new List<PassiveSlot>(4);
+   private IEquipmentSlotItem ActiveItem;
 
    private PlayerUpgrades upgradeStatus;
 
@@ -57,6 +61,9 @@ public class PlayerUpgradeSystem : MonoBehaviour
 
    private void Start()
    {
+      //I am only going to have time for one main weapon for the jam, this should be adjustable in theory.
+      ActiveItem = gameObject.GetComponent<Blaster>();
+
       availablePassiveWeapons = new List<IEquipmentSlotItem>();
       availablePassiveWeaponNames = new List<string>();
       foreach (MonoBehaviour weapon in this.gameObject.GetComponents<IPassiveWeapon>())
@@ -73,17 +80,16 @@ public class PlayerUpgradeSystem : MonoBehaviour
 
    public void AddPassive(IEquipmentSlotItem item)
    {
-      if(PassiveSlots.Count() < 4)
+      if (PassiveSlots.Count() < 4)
       {
-         PassiveSlots.Add(new PassiveSlot { item = item, UpgradeTier = 0 });
-         if(item is PassiveWeapon<WeaponUpgradeTier> weapon)
+         PassiveSlots.Add(new PassiveSlot { item = item, CurrentTier = 0 });
+         if (item is IPassiveWeapon weapon)
          {
-            weapon.enabled = true;
+            (weapon as MonoBehaviour).enabled = true;
          }
       }
    }
 
-   // Update is called once per frame
    public void UpdateModifiers()
    {
       PlayerEquipmentModifiers modifiers = new PlayerEquipmentModifiers
@@ -97,14 +103,36 @@ public class PlayerUpgradeSystem : MonoBehaviour
          PierceAdd = upgradeStatus.PierceEffects[upgradeStatus.PierceLevel].AdditionalPierce,
          HealthAdd = upgradeStatus.HealthBoostEffects[upgradeStatus.HealthBoostLevel].MaxHealth,
          HealthRegen = upgradeStatus.HealthBoostEffects[upgradeStatus.HealthBoostLevel].HealthRegen,
-         ShotSpeedMult = 1
+         ShotSpeedMult = 1,
+         AreaAdd = 0
       };
 
       foreach (PassiveSlot slot in PassiveSlots)
       {
-         slot.item.UpdateModifiers(ref modifiers, slot.UpgradeTier);
+         slot.item.UpdateModifiers(ref modifiers, slot.CurrentTier);
       }
 
       this.modifiers = modifiers;
    }
+
+   public (IEquipmentSlotItem, IEquipmentSlotItem) GetUpgradeChoices()
+   {
+      int choice1 = Random.Range(-1, PassiveSlots.Count());
+      int choice2 = -2;
+      if (PassiveSlots.Any())
+      {
+         do
+         {
+            choice2 = Random.Range(-1, PassiveSlots.Count());
+         } while (choice2 == choice1);
+      }
+
+      return (itemAtIndex(choice1), choice2 == -2 ? null : itemAtIndex(choice2));
+
+      IEquipmentSlotItem itemAtIndex(int index)
+      {
+         return index == -1 ? ActiveItem : PassiveSlots[index];
+      }
+   }
+
 }

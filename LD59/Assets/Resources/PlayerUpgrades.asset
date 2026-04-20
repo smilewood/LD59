@@ -12,22 +12,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafb511c937519b4481bcc45e407f197, type: 3}
   m_Name: PlayerUpgrades
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUpgrades
+  SignalPoints: 10
+  initialPoints: 10
   HealthBoostEffects:
-  - Cost: 0
+  - Cost: 5
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: BASE
     MaxHealth: 10
+    HealthRegen: 0
+  - Cost: 5
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: Max HP
+    MaxHealth: 15
+    HealthRegen: 0
+  - Cost: 5
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: Max HP
+    MaxHealth: 20
     HealthRegen: 0
   SpeedBoostEffects:
   - Cost: 0
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: BASE
     SpeedMultiplier: 1
-  - Cost: 0
+  - Cost: 5
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: Speed
     SpeedMultiplier: 1.2
   FirerateEffects:
   - Cost: 0
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: BASE
     FirerateMultiplier: 1
+  - Cost: 5
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: Firerate
+    FirerateMultiplier: 1.1
   DamageEffects:
   - Cost: 0
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: BASE
     DamageMultiplier: 1
+    AddedDamage: 0
+  - Cost: 5
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: Damage Mult
+    DamageMultiplier: 1.1
     AddedDamage: 0
   PierceEffects:
   - Cost: 0
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: BASE
     AdditionalPierce: 0
+  - Cost: 10
+    StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
+    UpgradeName: Pierce
+    AdditionalPierce: 1
