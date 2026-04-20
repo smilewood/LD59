@@ -4946,6 +4946,70 @@ MonoBehaviour:
     ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
     MaxCharges: 5
     ChargedCooldown: 0.3
+  - Damage: 30
+    FireCooldown: 0.8
+    UpgradeText: Improve charge time
+    ShotPierce: 1
+    ShotSpeed: 5
+    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    MaxCharges: 5
+    ChargedCooldown: 0.3
+  - Damage: 30
+    FireCooldown: 0.8
+    UpgradeText: Hold more charges
+    ShotPierce: 1
+    ShotSpeed: 5
+    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    MaxCharges: 8
+    ChargedCooldown: 0.3
+  - Damage: 40
+    FireCooldown: 0.8
+    UpgradeText: Increase Damage
+    ShotPierce: 1
+    ShotSpeed: 5
+    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    MaxCharges: 8
+    ChargedCooldown: 0.3
+  - Damage: 40
+    FireCooldown: 0.8
+    UpgradeText: Fire charged shots faster
+    ShotPierce: 1
+    ShotSpeed: 5
+    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    MaxCharges: 8
+    ChargedCooldown: 0.2
+  - Damage: 40
+    FireCooldown: 0.8
+    UpgradeText: Increase shot pierce
+    ShotPierce: 2
+    ShotSpeed: 6
+    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    MaxCharges: 8
+    ChargedCooldown: 0.2
+  - Damage: 40
+    FireCooldown: 0.6
+    UpgradeText: Improve charge time
+    ShotPierce: 2
+    ShotSpeed: 6
+    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    MaxCharges: 8
+    ChargedCooldown: 0.2
+  - Damage: 50
+    FireCooldown: 0.6
+    UpgradeText: Increase damage
+    ShotPierce: 2
+    ShotSpeed: 6
+    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    MaxCharges: 8
+    ChargedCooldown: 0.2
+  - Damage: 50
+    FireCooldown: 0.6
+    UpgradeText: Hold more charges
+    ShotPierce: 2
+    ShotSpeed: 6
+    ShotPrefab: {fileID: 8693678539314458895, guid: ed27f69afa53fd347ae8b748323c4201, type: 3}
+    MaxCharges: 10
+    ChargedCooldown: 0.2
   ShotParent: {fileID: 1255052995}
 --- !u!114 &2015877924
 MonoBehaviour:
@@ -4970,6 +5034,70 @@ MonoBehaviour:
     ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
     DirectionsToShoot: 2
     ShotDelay: 0.5
+  - Damage: 40
+    FireCooldown: 2
+    UpgradeText: Add aditional shot
+    ShotPierce: 2
+    ShotSpeed: 8
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
+    DirectionsToShoot: 3
+    ShotDelay: 0.5
+  - Damage: 40
+    FireCooldown: 1.25
+    UpgradeText: Fire faster
+    ShotPierce: 2
+    ShotSpeed: 8
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
+    DirectionsToShoot: 3
+    ShotDelay: 0.5
+  - Damage: 40
+    FireCooldown: 1.25
+    UpgradeText: Add aditional shot
+    ShotPierce: 2
+    ShotSpeed: 8
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
+    DirectionsToShoot: 4
+    ShotDelay: 0.5
+  - Damage: 40
+    FireCooldown: 1.25
+    UpgradeText: Increase shot pierce
+    ShotPierce: 4
+    ShotSpeed: 8
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
+    DirectionsToShoot: 4
+    ShotDelay: 0.5
+  - Damage: 40
+    FireCooldown: 1.25
+    UpgradeText: Fire in more directions
+    ShotPierce: 4
+    ShotSpeed: 8
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
+    DirectionsToShoot: 6
+    ShotDelay: 0.5
+  - Damage: 50
+    FireCooldown: 1.25
+    UpgradeText: Increase shot damage
+    ShotPierce: 4
+    ShotSpeed: 8
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
+    DirectionsToShoot: 6
+    ShotDelay: 0.5
+  - Damage: 50
+    FireCooldown: 1.25
+    UpgradeText: Even more directions
+    ShotPierce: 4
+    ShotSpeed: 8
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
+    DirectionsToShoot: 10
+    ShotDelay: 0.5
+  - Damage: 50
+    FireCooldown: 1
+    UpgradeText: Fire faster
+    ShotPierce: 4
+    ShotSpeed: 8
+    ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
+    DirectionsToShoot: 10
+    ShotDelay: 0.2
   ShotParent: {fileID: 1255052995}
 --- !u!114 &2015877925
 MonoBehaviour:
@@ -4987,11 +5115,36 @@ MonoBehaviour:
   Description: 'Maintain a damageing area around the player, damages all enemies
     in the zone. '
   Upgrades:
-  - Damage: 5
+  - Damage: 8
     FireCooldown: 0
     UpgradeText: BASE
-    TickRate: 2
+    TickRate: 1.5
     Radius: 4
+  - Damage: 8
+    FireCooldown: 0
+    UpgradeText: Larger Radius
+    TickRate: 1.5
+    Radius: 6
+  - Damage: 12
+    FireCooldown: 0
+    UpgradeText: Increase damage per tick
+    TickRate: 1.5
+    Radius: 6
+  - Damage: 12
+    FireCooldown: 0
+    UpgradeText: Increase tick rate
+    TickRate: 2
+    Radius: 6
+  - Damage: 12
+    FireCooldown: 0
+    UpgradeText: Increase tick rate
+    TickRate: 3
+    Radius: 6
+  - Damage: 12
+    FireCooldown: 0
+    UpgradeText: Larger Radius
+    TickRate: 3
+    Radius: 8
   AuraImage: {fileID: 1613440372}
 --- !u!114 &2015877926
 MonoBehaviour:

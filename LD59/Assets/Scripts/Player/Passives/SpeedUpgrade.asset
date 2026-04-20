@@ -16,12 +16,30 @@ MonoBehaviour:
   Name: Agility System
   Description: "Improvements to speed and reach\n\nLevel 1: \n+1 speed"
   upgradeTiers:
-  - SpeedAdd: 1
+  - SpeedAdd: 0.5
     AreaAdd: 0
     UpgradeText: BASE
-  - SpeedAdd: 2
+  - SpeedAdd: 1
     AreaAdd: 0
     UpgradeText: +1 speed
+  - SpeedAdd: 1
+    AreaAdd: 0.5
+    UpgradeText: +1 Area
+  - SpeedAdd: 1.5
+    AreaAdd: 1
+    UpgradeText: +1 Speed
+  - SpeedAdd: 2
+    AreaAdd: 1
+    UpgradeText: +1 Speed
   - SpeedAdd: 2
     AreaAdd: 1
     UpgradeText: +1 Area
+  - SpeedAdd: 2.5
+    AreaAdd: 1
+    UpgradeText: +1 speed
+  - SpeedAdd: 3
+    AreaAdd: 1
+    UpgradeText: +1 speed
+  - SpeedAdd: 3
+    AreaAdd: 2
+    UpgradeText: +2 Area

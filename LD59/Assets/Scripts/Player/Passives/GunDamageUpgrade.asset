@@ -30,3 +30,27 @@ MonoBehaviour:
   - DamageMult: 1.2
     PierceAdd: 1
     UpgradeText: +1 pierce
+  - DamageMult: 1.3
+    PierceAdd: 1
+    UpgradeText: Damage x1.3
+  - DamageMult: 1.5
+    PierceAdd: 1
+    UpgradeText: Damage x1.5
+  - DamageMult: 1.5
+    PierceAdd: 2
+    UpgradeText: +1 Pierce
+  - DamageMult: 1.75
+    PierceAdd: 2
+    UpgradeText: Damage x1.75
+  - DamageMult: 2
+    PierceAdd: 2
+    UpgradeText: Damage x2
+  - DamageMult: 2
+    PierceAdd: 3
+    UpgradeText: +2 Pierce
+  - DamageMult: 2.5
+    PierceAdd: 3
+    UpgradeText: Damage x2.5
+  - DamageMult: 3
+    PierceAdd: 3
+    UpgradeText: Damage x3

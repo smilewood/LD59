@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class ExperienceTracker : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class ExperienceTracker : MonoBehaviour
    {
       ExperiencePickup.AddListener(OnGetExp);
       expBar.UpdateBar(currentEXP, targetExp);
+      InputSystem.actions.FindAction("Levelup").performed += (_) => LevelUp();
    }
 
    public void OnGetExp()

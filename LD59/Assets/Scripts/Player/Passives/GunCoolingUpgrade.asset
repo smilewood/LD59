@@ -31,10 +31,26 @@ MonoBehaviour:
     ShotsAdd: 0
     UpgradeText: 1.5x firerate
   - FirerateMult: 1.5
-    ShotSpeedMult: 1.5
+    ShotSpeedMult: 1.2
     ShotsAdd: 0
-    UpgradeText: 1.5x Shot Speed
+    UpgradeText: 1.2x Shot Speed
   - FirerateMult: 1.5
     ShotSpeedMult: 1.5
     ShotsAdd: 1
     UpgradeText: +1 Shots
+  - FirerateMult: 1.75
+    ShotSpeedMult: 1.5
+    ShotsAdd: 1
+    UpgradeText: 1.75x fire rate
+  - FirerateMult: 1.75
+    ShotSpeedMult: 1.5
+    ShotsAdd: 1
+    UpgradeText: 1.5x Shot Speed
+  - FirerateMult: 2
+    ShotSpeedMult: 1.5
+    ShotsAdd: 1
+    UpgradeText: 2x fire rate
+  - FirerateMult: 2
+    ShotSpeedMult: 1.5
+    ShotsAdd: 2
+    UpgradeText: +1 aditional shot

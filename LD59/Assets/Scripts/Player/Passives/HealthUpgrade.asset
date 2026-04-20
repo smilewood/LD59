@@ -33,3 +33,27 @@ MonoBehaviour:
   - BonusHealth: 20
     HealthRegen: 0.1
     UpgradeText: +0.1 HP regen
+  - BonusHealth: 30
+    HealthRegen: 0.1
+    UpgradeText: +10 HP
+  - BonusHealth: 30
+    HealthRegen: 0.2
+    UpgradeText: +0.1 HP regen
+  - BonusHealth: 40
+    HealthRegen: 0.2
+    UpgradeText: +10 HP
+  - BonusHealth: 40
+    HealthRegen: 0.3
+    UpgradeText: +0.1 HP regen
+  - BonusHealth: 60
+    HealthRegen: 0.3
+    UpgradeText: +20 HP
+  - BonusHealth: 60
+    HealthRegen: 0.5
+    UpgradeText: +0.2 HP Regen
+  - BonusHealth: 80
+    HealthRegen: 0.5
+    UpgradeText: +20 HP
+  - BonusHealth: 100
+    HealthRegen: 0.5
+    UpgradeText: +20 HP

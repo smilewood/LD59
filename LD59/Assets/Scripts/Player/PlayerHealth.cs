@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
       OnPlayerHealthChanged.Invoke(CurrentHp, MaxHp);
       DamagePlayer.AddListener(ApplyDamage);
       PlayerUpgradeSystem.ModifiresUpdated.AddListener(UpdateHealthTotals);
+      StartCoroutine(HealthRegen());
    }
 
    public void ApplyDamage(int amount)
@@ -39,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
          if(upgrades.CurrentModifiers.HealthRegen > 0)
          {
             yield return new WaitForSeconds(1 / upgrades.CurrentModifiers.HealthRegen);
-            CurrentHp += CurrentHp < MaxHp ? 1 : 0;
+            DamagePlayer.Invoke(-1);
          }
          yield return null;
       }
