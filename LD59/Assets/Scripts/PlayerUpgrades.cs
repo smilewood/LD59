@@ -77,4 +77,8 @@ public class PlayerUpgrades : ScriptableObject
       SignalPoints = initialPoints;
       HealthBoostLevel = SpeedBoostLevel = FirerateLevel = DamageLevel = PierceLevel = 0;
    }
+   public void AddPoint()
+   {
+      ++SignalPoints;
+   }
 }

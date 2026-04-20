@@ -19,10 +19,11 @@ public class PlayerHealth : MonoBehaviour
    void Start()
    {
       upgrades = this.gameObject.GetComponent<PlayerUpgradeSystem>();
-      UpdateHealthTotals();
+      MaxHp = upgrades.CurrentModifiers.HealthAdd;
       CurrentHp = MaxHp;
       OnPlayerHealthChanged.Invoke(CurrentHp, MaxHp);
       DamagePlayer.AddListener(ApplyDamage);
+      PlayerUpgradeSystem.ModifiresUpdated.AddListener(UpdateHealthTotals);
    }
 
    public void ApplyDamage(int amount)
@@ -49,6 +50,8 @@ public class PlayerHealth : MonoBehaviour
       int oldMax = MaxHp;
       MaxHp = upgrades.CurrentModifiers.HealthAdd;
       CurrentHp += MaxHp - oldMax;
+
+      OnPlayerHealthChanged.Invoke(CurrentHp, MaxHp);
    }
 
 }

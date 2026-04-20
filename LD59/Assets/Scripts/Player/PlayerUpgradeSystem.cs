@@ -35,7 +35,7 @@ public struct PlayerEquipmentModifiers
 
 public class PlayerUpgradeSystem : MonoBehaviour
 {
-
+   public static UnityEvent ModifiresUpdated = new UnityEvent();
    public List<PassiveBase> availablePassiveItems;
    private List<IEquipmentSlotItem> availablePassiveWeapons;
    public List<string> availablePassiveWeaponNames;
@@ -115,6 +115,8 @@ public class PlayerUpgradeSystem : MonoBehaviour
       }
 
       this.modifiers = modifiers;
+
+      ModifiresUpdated.Invoke();
    }
 
    public (IEquipmentSlotItem, IEquipmentSlotItem) GetUpgradeChoices()

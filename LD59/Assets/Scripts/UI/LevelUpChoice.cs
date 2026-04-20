@@ -64,6 +64,7 @@ public class LevelUpChoice : MonoBehaviour
 
    public void CompleteCoice()
    {
+      upgradeSystem.UpdateModifiers();
       Time.timeScale = 1;
       this.gameObject.SetActive(false);
    }

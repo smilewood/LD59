@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class EnemyDamagedEvent : UnityEvent<int, int, int>{}
 public class EnemyHealth : MonoBehaviour
 {
+   public static UnityEvent OnEnemyKilled = new UnityEvent();
    public EnemyDamagedEvent OnDamageRecieved;
    public int BaseHealth;
 
@@ -37,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
             GameObject pickup = Instantiate(ExpPickup, this.transform.position, Quaternion.identity, this.transform.parent);
             pickup.GetComponent<ExperiencePickup>().Scatter(Random.insideUnitCircle * ScatterRadius);
          }
+         OnEnemyKilled.Invoke();
          Destroy(this.gameObject);
       }
    }
