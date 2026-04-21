@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -15,18 +16,21 @@ public class ExperienceTracker : MonoBehaviour
    public ExpBar expBar;
 
 
+
+
+
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
       ExperiencePickup.AddListener(OnGetExp);
-      expBar.UpdateBar(currentEXP, targetExp);
+      expBar.UpdateBar(currentEXP, targetExp, CurrentLevel);
       InputSystem.actions.FindAction("Levelup").performed += (_) => LevelUp();
    }
 
    public void OnGetExp()
    {
       ++currentEXP;
-      expBar.UpdateBar(currentEXP, targetExp);
+      expBar.UpdateBar(currentEXP, targetExp, CurrentLevel);
       if(currentEXP >= targetExp)
       {
          LevelUp();

@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 383479223473034763, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 383479223473034763, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 383479223473034763, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8463342
+      objectReference: {fileID: 0}
     - target: {fileID: 957598190879704262, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
       propertyPath: m_Name
       value: UpgradeBeacon
@@ -20,6 +32,34 @@ PrefabInstance:
       propertyPath: beacons.Array.data[0].BeaconPrefab
       value: 
       objectReference: {fileID: 957598190879704262, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+    - target: {fileID: 2932678527653894709, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932678527653894709, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932678527653894709, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.032675758
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932678527653894709, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815537525748759887, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815537525748759887, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.11731872
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815537525748759887, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5498169349779492165, guid: 919f4e5713c91ce429924bc962ce64a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

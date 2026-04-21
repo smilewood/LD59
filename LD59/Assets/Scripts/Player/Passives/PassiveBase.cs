@@ -29,7 +29,7 @@ public class PassiveSlot : IEquipmentSlotItem
    {
       get
       {
-         return CurrentTier;
+         return item.UpgradeTier >= 0 ? item.UpgradeTier : CurrentTier;
       }
    }
 
@@ -51,7 +51,8 @@ public class PassiveSlot : IEquipmentSlotItem
 
    public void ApplyUpgradeTier(int newTier)
    {
-       CurrentTier = newTier;
+      item.ApplyUpgradeTier(newTier);
+      CurrentTier = newTier;
    }
 
    public string GetUpgradeText(int tier)
@@ -78,7 +79,7 @@ public abstract class PassiveBase : ScriptableObject, IEquipmentSlotItem
    {
       get
       {
-         throw new NotImplementedException();
+         return -1;
       }
    }
    public string Name;

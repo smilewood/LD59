@@ -122,7 +122,7 @@ public class PlayerUpgradeSystem : MonoBehaviour
 
    public (IEquipmentSlotItem, IEquipmentSlotItem) GetUpgradeChoices()
    {
-      List<IEquipmentSlotItem> items = PassiveSlots.Append(ActiveItem).OrderBy(item => !item.HasUpgrade(item.UpgradeTier + 1)).ThenBy(i => Random.value).ToList();
+      List<IEquipmentSlotItem> items = PassiveSlots.Append(ActiveItem).OrderBy(item => !item.HasUpgrade(item.UpgradeTier)).ThenBy(i => Random.value).ToList();
       return (items[0], items.Count > 1 ? items[1] : null);
    }
 

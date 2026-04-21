@@ -14,6 +14,7 @@ public class BeaconArea : MonoBehaviour
    private List<Vector2> collisionPoints = new List<Vector2>();
 
    public UnityEvent OnBeaconCharged = new UnityEvent();
+   public GameObject IndicatorCircle;
 
    // Update is called once per frame
    void Update()
@@ -21,6 +22,7 @@ public class BeaconArea : MonoBehaviour
       if (playerInArea)
       {
          chargeAmount += Time.deltaTime;
+         IndicatorCircle.transform.localScale = Vector2.one * chargeAmount / ChargeTime;
          if(chargeAmount > ChargeTime)
          {
             //Do something here

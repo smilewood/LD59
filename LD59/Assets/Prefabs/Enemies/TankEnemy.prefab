@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
     - target: {fileID: 3892129211836234655, guid: 44f49843a3a180044ada54d146b57483, type: 3}
       propertyPath: ExpAmount
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3892129211836234655, guid: 44f49843a3a180044ada54d146b57483, type: 3}
       propertyPath: BaseHealth
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7513289582596491339, guid: 44f49843a3a180044ada54d146b57483, type: 3}
       propertyPath: speed
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8698168337770731411, guid: 44f49843a3a180044ada54d146b57483, type: 3}
       propertyPath: m_LocalScale.x

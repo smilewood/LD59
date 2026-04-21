@@ -31,7 +31,7 @@ public class LevelUpChoice : MonoBehaviour
       else
       {
          panel.transform.Find("UpgradeName").GetComponent<TMP_Text>().text = item.EquipmentName;
-         if (item.HasUpgrade(item.UpgradeTier + 1))
+         if (item.HasUpgrade(item.UpgradeTier))
          {
             panel.transform.Find("UpgradeDescription").GetComponent<TMP_Text>().text = item.GetUpgradeText(item.UpgradeTier + 1);
             //TODO there should be an image for each upgrade
