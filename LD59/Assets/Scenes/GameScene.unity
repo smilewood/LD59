@@ -2647,6 +2647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   levelText: {fileID: 22110156}
   LevelMessage: Level {0}
+  lastLevel: 0
 --- !u!114 &1173343172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5369,7 +5370,7 @@ MonoBehaviour:
     ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
     DirectionsToShoot: 6
     ShotDelay: 0.5
-  - Damage: 50
+  - Damage: 80
     FireCooldown: 1.25
     UpgradeText: Increase shot damage
     ShotPierce: 4
@@ -5377,7 +5378,7 @@ MonoBehaviour:
     ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
     DirectionsToShoot: 6
     ShotDelay: 0.5
-  - Damage: 50
+  - Damage: 80
     FireCooldown: 1.25
     UpgradeText: Even more directions
     ShotPierce: 4
@@ -5385,7 +5386,7 @@ MonoBehaviour:
     ShotPrefab: {fileID: 7472296686509545238, guid: d53730c2d6d04e044891e5823e4d9d89, type: 3}
     DirectionsToShoot: 10
     ShotDelay: 0.5
-  - Damage: 50
+  - Damage: 80
     FireCooldown: 1
     UpgradeText: Fire faster
     ShotPierce: 4
