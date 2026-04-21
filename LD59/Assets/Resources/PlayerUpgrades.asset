@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafb511c937519b4481bcc45e407f197, type: 3}
   m_Name: PlayerUpgrades
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUpgrades
+  PointsUpdated:
+    m_PersistentCalls:
+      m_Calls: []
   SignalPoints: 0
   initialPoints: 0
   HealthBoostEffects:
@@ -142,3 +145,28 @@ MonoBehaviour:
     StoreImage: {fileID: 255877476622243558, guid: ec565514239487d4ab54a990306978d2, type: 3}
     UpgradeName: Pierce
     AdditionalPierce: 3
+  AreaEffects:
+  - Cost: 0
+    StoreImage: {fileID: 0}
+    UpgradeName: BASE
+    AdditionalArea: 0
+  - Cost: 5
+    StoreImage: {fileID: 0}
+    UpgradeName: Area
+    AdditionalArea: 0.25
+  - Cost: 10
+    StoreImage: {fileID: 0}
+    UpgradeName: Area
+    AdditionalArea: 0.5
+  - Cost: 15
+    StoreImage: {fileID: 0}
+    UpgradeName: Area
+    AdditionalArea: 1.5
+  - Cost: 20
+    StoreImage: {fileID: 0}
+    UpgradeName: Area
+    AdditionalArea: 2
+  - Cost: 30
+    StoreImage: {fileID: 0}
+    UpgradeName: Area
+    AdditionalArea: 3

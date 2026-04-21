@@ -11,10 +11,13 @@ public class BeaconArea : MonoBehaviour
    public float chargeAmount = 0;
    public bool playerInArea;
 
-   private List<Vector2> collisionPoints = new List<Vector2>();
-
    public UnityEvent OnBeaconCharged = new UnityEvent();
    public GameObject IndicatorCircle;
+
+   private void Start()
+   {
+      IndicatorCircle.transform.localScale = Vector2.zero;
+   }
 
    // Update is called once per frame
    void Update()

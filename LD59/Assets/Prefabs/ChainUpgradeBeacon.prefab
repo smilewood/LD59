@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6166265449679187645, guid: 2bbac063d37cb5a489453d718c47dc55, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166265449679187645, guid: 2bbac063d37cb5a489453d718c47dc55, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9039132836901046132, guid: 2bbac063d37cb5a489453d718c47dc55, type: 3}
       propertyPath: m_Name
       value: ChainUpgradeBeacon

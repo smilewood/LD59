@@ -107,7 +107,7 @@ public class PlayerUpgradeSystem : MonoBehaviour
          HealthAdd = upgradeStatus.HealthBoostEffects[upgradeStatus.HealthBoostLevel].MaxHealth,
          HealthRegen = upgradeStatus.HealthBoostEffects[upgradeStatus.HealthBoostLevel].HealthRegen,
          ShotSpeedMult = 1,
-         AreaAdd = 0
+         AreaAdd = upgradeStatus.AreaEffects[upgradeStatus.AreaLevel].AdditionalArea
       };
 
       foreach (PassiveSlot slot in PassiveSlots)

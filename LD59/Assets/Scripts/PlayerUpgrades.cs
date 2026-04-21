@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 //TODO: This is going to need a little reworking since the upgrades are going to persist in the editor
 //For now I am going to just reset the levels on launch. 
@@ -7,6 +8,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerUpgrades", menuName = "Scriptable Objects/PlayerUpgrades")]
 public class PlayerUpgrades : ScriptableObject
 {
+   public UnityEvent<int> PointsUpdated;
+
    public int SignalPoints;
    public int initialPoints;
 
@@ -72,13 +75,29 @@ public class PlayerUpgrades : ScriptableObject
    public int PierceLevel = 0;
    public PierceUpgrade[] PierceEffects;
 
+   [Serializable]
+   public class AreaUpgrade : Upgrade
+   {
+      public float AdditionalArea;
+   }
+
+   [NonSerialized]
+   public int AreaLevel = 0;
+   public AreaUpgrade[] AreaEffects;
+
    private void OnEnable()
    {
       SignalPoints = initialPoints;
-      HealthBoostLevel = SpeedBoostLevel = FirerateLevel = DamageLevel = PierceLevel = 0;
+      HealthBoostLevel = SpeedBoostLevel = FirerateLevel = DamageLevel = PierceLevel = AreaLevel = 0;
+      PointsUpdated = new UnityEvent<int>();
    }
    public void AddPoint()
    {
-      ++SignalPoints;
+      SpendPoints(-1);
+   }
+   public void SpendPoints(int amount)
+   {
+      SignalPoints -= amount;
+      PointsUpdated.Invoke(SignalPoints);
    }
 }

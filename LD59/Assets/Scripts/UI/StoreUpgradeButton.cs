@@ -15,7 +15,8 @@ public class StoreUpgradeButton : MonoBehaviour
       SpeedBoost,
       Firerate,
       Damage,
-      Pierce
+      Pierce,
+      Area
    }
    private PlayerUpgrades upgradeSource;
    private Button buyButton;
@@ -48,8 +49,8 @@ public class StoreUpgradeButton : MonoBehaviour
       {
          buyButton.interactable = false;
          buyButton.GetComponentInChildren<TMP_Text>().text = "Max Level";
-         displayImage.sprite = UpgradeForLevel(UpgradeLevel-1).StoreImage;
-         displayName.text = UpgradeForLevel(UpgradeLevel-1).UpgradeName;
+         displayImage.sprite = UpgradeForLevel(UpgradeLevel - 1).StoreImage;
+         displayName.text = UpgradeForLevel(UpgradeLevel - 1).UpgradeName;
       }
    }
 
@@ -92,6 +93,11 @@ public class StoreUpgradeButton : MonoBehaviour
                result = upgradeSource.PierceLevel;
                break;
             }
+            case UpgradeType.Area:
+            {
+               result = upgradeSource.AreaLevel;
+               break;
+            }
             default:
             {
                result = -1;
@@ -129,6 +135,11 @@ public class StoreUpgradeButton : MonoBehaviour
                upgradeSource.PierceLevel = value;
                break;
             }
+            case UpgradeType.Area:
+            {
+               upgradeSource.AreaLevel = value;
+               break;
+            }
          }
       }
    }
@@ -158,6 +169,10 @@ public class StoreUpgradeButton : MonoBehaviour
             case UpgradeType.Pierce:
             {
                return upgradeSource.PierceEffects.Length;
+            }
+            case UpgradeType.Area:
+            {
+               return upgradeSource.AreaEffects.Length;
             }
             default:
             {
@@ -198,6 +213,10 @@ public class StoreUpgradeButton : MonoBehaviour
          case UpgradeType.Pierce:
          {
             return upgradeSource.PierceEffects[upgradeLevel];
+         }
+         case UpgradeType.Area:
+         {
+            return upgradeSource.AreaEffects[upgradeLevel];
          }
          default:
          {

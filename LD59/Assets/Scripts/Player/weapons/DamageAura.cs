@@ -70,7 +70,7 @@ public class DamageAura : PassiveWeapon<AuraUpgradeTier>
       }
       Values.FireCooldown = (1f / Values.TickRate);
       damageCollider.radius = Values.Radius;
-      AuraImage.transform.localScale = Vector3.one * Values.Radius * 2;
+      AuraImage.transform.localScale = (Values.Radius + Modifiers.AreaAdd) * 2 * Vector3.one;
 
    }
 }
